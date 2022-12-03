@@ -12,11 +12,6 @@ const app = new App({
 
 window.addEventListener('hashchange', () => {
   app.renderPage();
-  setTimeout(() => {
-    if ($('#spinner').length > 0) {
-      $('#spinner').removeClass('show');
-    }
-  }, 500);
 });
 
 window.addEventListener('load', () => {

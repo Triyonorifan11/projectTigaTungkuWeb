@@ -14,10 +14,6 @@ class App {
     console.log('logout');
   }
 
-  _loaderShow() {
-    $('#spinner').addClass('show');
-  }
-
   _loaderHide() {
     setTimeout(() => {
       if ($('#spinner').length > 0) {
@@ -27,7 +23,6 @@ class App {
   }
 
   async renderPage() {
-    this._loaderShow();
     try {
       const url = UrlParser.parseActiveUrlWithCombiner();
       const page = routes[url];
