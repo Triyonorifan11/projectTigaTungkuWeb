@@ -1,27 +1,41 @@
+/* eslint-disable no-undef */
+import formTambahProduk from '../../utils/formTambahProduk';
+
 const addProduk = {
   async render() {
     return `
     <div class="row g-4">
         <div class="col-md-12">
             <div class="bg-light rounded h-100 p-4">
-                <h6 class="mb-4">Basic Form</h6>
-                <form>
-                    <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1"
-                            aria-describedby="emailHelp">
-                        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.
-                        </div>
+                <h3 class="mb-4 text-primary">Tambah Produk</h3>
+                <form method="post" action="#" id="formTambahProduk" enctype="multipart/form-data">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="namaProduk" class="form-label">Nama Produk</label>
+                                <input type="text" class="form-control" placeholder="Cookies" id="namaProduk" required aria-describedby="emailHelp">
+                            </div>
+                            <label for="hargaProduk" class="form-label">Harga Produk</label>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">Rp</span>
+                                <input type="number" class="form-control" required aria-label="Harga Produk" id="hargaProduk" placeholder="13000">
+                            </div>
+                        </div>        
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="gambarProduk" class="form-label">Gambar Produk</label>
+                                <input class="form-control" type="file" id="gambarProduk" required accept=".jpg,.jpeg,.png">
+                                <small><span class="text-danger fst-italic">*Pastikan file tidak lebih 3mb dan format jpg/jpeg/png</span></small>
+                            </div>
+                        </div>        
                     </div>
                     <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1">
+                        <label for="deskripsiProduk" class="form-label">Deskripsi</label>
+                        <textarea class="form-control bg-white" id="deskripsiProduk" required rows="3"></textarea>
                     </div>
-                    <div class="mb-3 form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-primary" id="btnSubmit" type="submit">Tambah Produk</button>
                     </div>
-                    <button type="submit" class="btn btn-primary">Sign in</button>
                 </form>
             </div>
         </div>
@@ -30,7 +44,24 @@ const addProduk = {
   },
 
   async afterRender() {
-    console.log('add produk');
+    document.querySelector('#produk').classList.add('active');
+    await formTambahProduk.init();
+
+    $('#deskripsiProduk').summernote({
+      placeholder: 'Tulis Deskripsi postingan',
+      tabsize: 2,
+      height: 100,
+      toolbar: [
+        ['style', ['undo', 'redo', 'style', 'bold', 'underline', 'clear']],
+        ['font', ['strikethrough', 'superscript', 'subscript']],
+        ['fontsize', ['fontsize']],
+        ['height', ['height']],
+        ['color', ['color']],
+        ['para', ['ul', 'ol', 'paragraph']],
+        ['insert', ['link']],
+        ['view', ['help']],
+      ],
+    });
   },
 };
 
