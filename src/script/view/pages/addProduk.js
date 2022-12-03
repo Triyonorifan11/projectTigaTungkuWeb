@@ -13,25 +13,29 @@ const addProduk = {
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label for="namaProduk" class="form-label">Nama Produk</label>
-                                <input type="text" class="form-control" placeholder="Cookies" id="namaProduk" required aria-describedby="emailHelp">
+                                <input type="text" class="form-control" name="namaProduk" placeholder="Cookies" id="namaProduk" required aria-describedby="emailHelp">
                             </div>
                             <label for="hargaProduk" class="form-label">Harga Produk</label>
                             <div class="input-group mb-3">
                                 <span class="input-group-text">Rp</span>
-                                <input type="number" class="form-control" required aria-label="Harga Produk" id="hargaProduk" placeholder="13000">
+                                <input type="number" class="form-control" name="hargaProduk" required aria-label="Harga Produk" id="hargaProduk" placeholder="13000">
                             </div>
                         </div>        
                         <div class="col-md-6">
                             <div class="mb-3">
-                                <label for="gambarProduk" class="form-label">Gambar Produk</label>
-                                <input class="form-control" type="file" id="gambarProduk" required accept=".jpg,.jpeg,.png">
-                                <small><span class="text-danger fst-italic">*Pastikan file tidak lebih 3mb dan format jpg/jpeg/png</span></small>
+                                <label for="gambarProduk" class="form-label">Gambar Produk <small class="text-danger fst-italic">*Pastikan file tidak lebih 3mb dan format jpg/jpeg/png</small></label>
+                                <input class="form-control" type="file" name="gambarProduk" id="gambarProduk" required accept=".jpg,.jpeg,.png">
+                                
+                            </div>
+                            <div class="mb-3">
+                                <label for="linkShopee" class="form-label">Tautan Shopee</label>
+                                <input type="text" class="form-control" name="linkShopee" placeholder="https://shopee.co.id/product/224****" id="linkShopee" required aria-describedby="emailHelp">
                             </div>
                         </div>        
                     </div>
                     <div class="mb-3">
                         <label for="deskripsiProduk" class="form-label">Deskripsi</label>
-                        <textarea class="form-control bg-white" id="deskripsiProduk" required rows="3"></textarea>
+                        <textarea class="form-control bg-white" name="deskripsiProduk" id="deskripsiProduk" required rows="3"></textarea>
                     </div>
                     <div class="d-grid gap-2">
                         <button class="btn btn-primary" id="btnSubmit" type="submit">Tambah Produk</button>
@@ -48,7 +52,7 @@ const addProduk = {
     await formTambahProduk.init();
 
     $('#deskripsiProduk').summernote({
-      placeholder: 'Tulis Deskripsi postingan',
+      placeholder: 'Tulis Deskripsi Produk',
       tabsize: 2,
       height: 100,
       toolbar: [
