@@ -1,4 +1,8 @@
 /* eslint-disable no-undef */
+import getProduk from '../../utils/getProduk';
+import { tableProduk, spinnerTable } from '../templates/template';
+import { flassMessage } from '../../utils/functions';
+
 const produk = {
   async render() {
     return `
@@ -20,19 +24,7 @@ const produk = {
                 <th scope="col" class="no-sort">Action</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>@mdo</td>
-                <td>
-                  <button type="button" class="btn btn-sm rounded-circle btn-secondary" title="Edit data"><i class="bi bi-pen"></i></button>
-                  <button type="button" class="btn btn-sm btn-danger rounded-circle" title="Delete data"><i class="bi bi-trash"></i></button>
-                </td>
-              </tr>
-              
+            <tbody>           
             </tbody>
           </table>
         </div>
@@ -43,14 +35,30 @@ const produk = {
 
   async afterRender() {
     document.querySelector('#produk').classList.add('active');
+    const tbody = document.querySelector('tbody');
+    tbody.innerHTML = spinnerTable();
+    try {
+      const dataProduk = await getProduk.init();
+      let i = 0;
+      tbody.innerHTML = '';
+      dataProduk.forEach((doc) => {
+        const docProduk = doc.data();
+        docProduk.idProduk = doc.id;
+        i += 1;
+        console.log(docProduk);
+        tbody.innerHTML += tableProduk(docProduk, i);
+      });
 
-    $('#daftarproduk').DataTable({
-      lengthMenu: [[5, 10, 25, 50, -1], [5, 10, 25, 50, 'All']],
-      columnDefs: [{
-        targets: 'no-sort',
-        orderable: false,
-      }],
-    });
+      $('#daftarproduk').DataTable({
+        lengthMenu: [[5, 10, 25, 50, -1], [5, 10, 25, 50, 'All']],
+        columnDefs: [{
+          targets: 'no-sort',
+          orderable: false,
+        }],
+      });
+    } catch (error) {
+      flassMessage('error', 'Error', `Error: ${error}`);
+    }
   },
 };
 
