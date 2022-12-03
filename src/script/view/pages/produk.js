@@ -1,5 +1,6 @@
 /* eslint-disable no-undef */
 import getProduk from '../../utils/getProduk';
+import deleteProduk from '../../utils/deleteProduk';
 import { tableProduk, spinnerTable } from '../templates/template';
 import { flassMessage } from '../../utils/functions';
 
@@ -45,9 +46,10 @@ const produk = {
         const docProduk = doc.data();
         docProduk.idProduk = doc.id;
         i += 1;
-        console.log(docProduk);
         tbody.innerHTML += tableProduk(docProduk, i);
       });
+
+      await deleteProduk.init();
 
       $('#daftarproduk').DataTable({
         lengthMenu: [[5, 10, 25, 50, -1], [5, 10, 25, 50, 'All']],
