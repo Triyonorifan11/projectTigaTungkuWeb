@@ -8,7 +8,7 @@ const editProduk = {
     return `
     <div class="col-md-12">
       <div class="bg-light rounded d-flex align-items-center p-3 mb-4">
-        <h3 class="text-primary m-0">Edit Produk</h3>
+        <h3 class="text-primary m-0"><a href="#/produk" title="Back"><i class="bi bi-arrow-left me-2"></i></a>Edit Produk</h3>
       </div>
     </div>
 

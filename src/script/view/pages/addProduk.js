@@ -8,7 +8,7 @@ const addProduk = {
     <div class="row g-4">
         <div class="col-md-12">
             <div class="bg-light rounded h-100 p-4">
-                <h3 class="mb-4 text-primary">Tambah Produk</h3>
+                <h3 class="mb-4 text-primary"><a href="#/produk" title="Back"><i class="bi bi-arrow-left me-2"></i></a>Tambah Produk</h3>
                 <form method="post" action="#" id="formTambahProduk" enctype="multipart/form-data">
                     
                 </form>
