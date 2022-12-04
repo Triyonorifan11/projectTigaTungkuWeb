@@ -10,8 +10,13 @@ class App {
     this._maincontent = maincontent;
   }
 
-  _logoutSeller() {
-    console.log('logout');
+  _logoutAdmin() {
+    const logout = document.querySelector('#logout');
+    logout.addEventListener('click', (e) => {
+      e.preventDefault();
+      localStorage.removeItem('TigaTungku');
+      window.location.href = './login.html';
+    });
   }
 
   _loaderHide() {
@@ -28,6 +33,7 @@ class App {
       const page = routes[url];
       this._maincontent.innerHTML = await page.render();
       await page.afterRender();
+      this._logoutAdmin();
     } catch (error) {
       this._maincontent.innerHTML = `
       <div class="container-fluid pt-4 px-4">

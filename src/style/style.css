@@ -21,6 +21,11 @@ a.text-orange:hover{
     border-color: var(--orange) !important;
 }
 
+.form-check-input:checked {
+    background-color: var(--orange) !important;
+    border-color: var(--orange) !important;
+}
+
 .back-to-top {
     position: fixed;
     display: none;
@@ -65,6 +70,7 @@ a.text-orange:hover{
     transition: opacity 0s ease-out, visibility 0s linear 0s;
     visibility: visible;
     opacity: 1;
+    z-index: 99999;
 }
 
 
@@ -221,7 +227,7 @@ a.text-orange:hover{
 
 .content .navbar .navbar-nav .nav-link:hover,
 .content .navbar .navbar-nav .nav-link.active {
-    color: var(--primary);
+    color: var(--orange);
 }
 
 .content .navbar .sidebar-toggler,
