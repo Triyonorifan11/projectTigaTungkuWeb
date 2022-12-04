@@ -22,6 +22,7 @@ const deleteProduk = {
           title: 'Produk ini akan dihapus? ',
           showCancelButton: true,
           confirmButtonText: 'Confirm',
+          confirmButtonColor: '#f57c1a',
         }).then((result) => {
           if (result.isConfirmed) {
             this._deleteDataProduk(idProduk);

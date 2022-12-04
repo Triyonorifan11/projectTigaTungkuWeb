@@ -3,6 +3,22 @@
     --primary: #009CFF;
     --light: #F3F6F9;
     --dark: #191C24;
+    --orange: #f57c1a;
+    --orangelight: #ffeddd;
+}
+
+a.text-orange{
+    color: var(--orange);
+}
+a.text-orange:hover{
+    color: #db690b;
+}
+
+.page-item.active .page-link {
+    z-index: 3;
+    color: #fff;
+    background-color: var(--orange) !important;
+    border-color: var(--orange) !important;
 }
 
 .back-to-top {
@@ -11,6 +27,29 @@
     right: 45px;
     bottom: 45px;
     z-index: 99;
+}
+
+.btn.btn-orange{
+    background-color: var(--orange);
+    color: #F3F6F9;
+}
+.btn.btn-orange:hover{
+    background-color: #db690b;
+    color: #F3F6F9;
+    border: 1px solid #db690b;
+}
+
+.bg-orange{
+    background-color: var(--orange);
+}
+
+.bg-orangelight{
+    background-color: var(--orangelight);
+    color: #F3F6F9;
+}
+
+.text-orange{
+    color: var(--orange);
 }
 
 
@@ -74,7 +113,7 @@
     width: 250px;
     height: 100vh;
     overflow-y: auto;
-    background: var(--light);
+    background: var(--orangelight);
     transition: 0.5s;
     z-index: 999;
 }
@@ -126,16 +165,16 @@
     padding: 7px 20px;
     color: var(--dark);
     font-weight: 500;
-    border-left: 3px solid var(--light);
+    border-left: 3px solid var(--orangelight);
     border-radius: 0 30px 30px 0;
     outline: none;
 }
 
 .sidebar .navbar .navbar-nav .nav-link:hover,
 .sidebar .navbar .navbar-nav .nav-link.active {
-    color: var(--primary);
+    color: var(--orange);
     background: #FFFFFF;
-    border-color: var(--primary);
+    border-color: var(--orange);
 }
 
 .sidebar .navbar .navbar-nav .nav-link i {
@@ -204,6 +243,7 @@
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     transition: .5s;
+    color: var(--orange);
 }
 
 .content .navbar .dropdown-toggle[aria-expanded=true]::after {

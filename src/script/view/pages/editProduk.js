@@ -7,8 +7,8 @@ const editProduk = {
   async render() {
     return `
     <div class="col-md-12">
-      <div class="bg-light rounded d-flex align-items-center p-3 mb-4">
-        <h3 class="text-primary m-0"><a href="#/produk" title="Back"><i class="bi bi-arrow-left me-2"></i></a>Edit Produk</h3>
+      <div class="bg-orangelight rounded d-flex align-items-center p-3 mb-4">
+        <h3 class="text-orange m-0"><a href="#/produk" class="text-orange" title="Back"><i class="bi bi-arrow-left me-2"></i></a>Edit Produk</h3>
       </div>
     </div>
 

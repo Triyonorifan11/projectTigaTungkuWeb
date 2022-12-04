@@ -9,7 +9,7 @@ const tableProduk = (data, i) => `
     <td>${formatDate(data.tgl_diupdate)}</td>
     <td>
         <a href="#/edit-produk/${data.idProduk}" class="btn btn-sm rounded-circle btn-secondary" title="Edit data"><i class="bi bi-pen"></i></a>
-        <button type="button" id="btnDelete" class="btn btn-sm btn-danger rounded-circle" data-produk="${data.idProduk}" title="Delete data"><i class="bi bi-trash"></i></button>
+        <button type="button" id="btnDelete" class="btn btn-sm btn-orange rounded-circle" data-produk="${data.idProduk}" title="Delete data"><i class="bi bi-trash"></i></button>
     </td>
 </tr>
 `;
@@ -17,42 +17,42 @@ const spinnerTable = () => `
 <tr>
       <td>
         <div class="d-flex justify-content-center">
-          <div class="spinner-border text-primary" role="status">
+          <div class="spinner-border text-orange" role="status">
             <span class="visually-hidden">Loading...</span>
           </div>
         </div>
       </td>
       <td>
         <div class="d-flex justify-content-center">
-          <div class="spinner-border text-primary" role="status">
+          <div class="spinner-border text-orange" role="status">
             <span class="visually-hidden">Loading...</span>
           </div>
         </div>
       </td>
       <td>
         <div class="d-flex justify-content-center">
-          <div class="spinner-border text-primary" role="status">
+          <div class="spinner-border text-orange" role="status">
             <span class="visually-hidden">Loading...</span>
           </div>
         </div>
       </td>
       <td>
         <div class="d-flex justify-content-center">
-          <div class="spinner-border text-primary" role="status">
+          <div class="spinner-border text-orange" role="status">
             <span class="visually-hidden">Loading...</span>
           </div>
         </div>
       </td>
       <td>
         <div class="d-flex justify-content-center">
-          <div class="spinner-border text-primary" role="status">
+          <div class="spinner-border text-orange" role="status">
             <span class="visually-hidden">Loading...</span>
           </div>
         </div>
       </td>
       <td>
         <div class="d-flex justify-content-center">
-          <div class="spinner-border text-primary" role="status">
+          <div class="spinner-border text-orange" role="status">
             <span class="visually-hidden">Loading...</span>
           </div>
         </div>
@@ -90,7 +90,7 @@ const formAddProduk = () => `
                         <textarea class="form-control bg-white" name="deskripsiProduk" id="deskripsiProduk" required rows="3"></textarea>
                     </div>
                     <div class="d-grid gap-2">
-                        <button class="btn btn-primary" id="btnSubmit" type="submit">Tambah Produk</button>
+                        <button class="btn btn-orange" id="btnSubmit" type="submit">Tambah Produk</button>
                     </div>
 `;
 
@@ -124,14 +124,14 @@ const formEditProduk = (data) => `
     <textarea class="form-control bg-white" name="deskripsiProduk" id="deskripsiProduk" required rows="3">${data.deskripsi_produk}</textarea>
 </div>
 <div class="d-grid gap-2">
-    <button class="btn btn-primary" id="btnSubmit" type="submit">Edit Produk</button>
+    <button class="btn btn-orange" id="btnSubmit" type="submit">Edit Produk</button>
 </div>
 `;
 
 const spinnerCard = () => `
 <div class="d-flex align-items-center">
-  <strong class="text-primary">Loading...</strong>
-  <div class="spinner-border ms-auto text-primary" role="status" aria-hidden="true"></div>
+  <strong class="text-orange">Loading...</strong>
+  <div class="spinner-border ms-auto text-orange" role="status" aria-hidden="true"></div>
 </div>
 `;
 

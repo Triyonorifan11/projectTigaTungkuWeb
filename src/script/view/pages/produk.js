@@ -8,9 +8,9 @@ const produk = {
   async render() {
     return `
     <div class="col-md-12">
-      <div class="bg-light rounded d-flex align-items-center p-3 mb-4">
-        <h3 class="text-primary m-0">Daftar Produk</h3>
-        <a class="btn btn-primary ms-auto rounded-pill" title="Tambah Produk" href="#/tambah-produk" role="button">Tambah Produk</a>
+      <div class="bg-orangelight rounded d-flex align-items-center p-3 mb-4">
+        <h3 class="m-0 text-orange">Daftar Produk</h3>
+        <a class="btn btn-orange ms-auto rounded-pill" title="Tambah Produk" href="#/tambah-produk" role="button">Tambah Produk</a>
       </div>
       <div class="shadow rounded p-4">
         <div class="table-responsive p-2">
