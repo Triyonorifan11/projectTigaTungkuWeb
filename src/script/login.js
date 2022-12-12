@@ -10,7 +10,7 @@ function checkLogin() {
     window.location.href = './';
   }
 }
-
+checkLogin();
 window.addEventListener('load', () => {
   document.getElementById('spinner').classList.add('show');
   checkLogin();
