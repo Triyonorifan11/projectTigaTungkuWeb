@@ -1,3 +1,5 @@
+import dashboardData from '../../utils/dashboard';
+
 const dashboard = {
   async render() {
     return `
@@ -7,7 +9,7 @@ const dashboard = {
                 <i class="fa fa-chart-bar fa-3x text-orange"></i>
                 <div class="ms-3">
                     <h4 class="mb-2 text-orange">Total Produk</h4>
-                    <h5 class="mb-0 text-orange">8</h5>
+                    <h5 class="mb-0 text-orange" id="countProduk">Loading...</h5>
                 </div>
             </div>
         </div>
@@ -16,7 +18,7 @@ const dashboard = {
                 <i class="fa fa-chart-pie fa-3x text-orange"></i>
                 <div class="ms-3">
                     <h4 class="mb-2 text-orange">Total Testimoni</h4>
-                    <h5 class="mb-0 text-orange">$1234</h6>
+                    <h5 class="mb-0 text-orange" id="countTesti">Loading...</h6>
                 </div>
             </div>
         </div>
@@ -26,6 +28,11 @@ const dashboard = {
 
   async afterRender() {
     document.querySelector('#dashboard').classList.add('active');
+    const countProduk = document.getElementById('countProduk');
+    const countTesti = document.getElementById('countTesti');
+    const data = await dashboardData.init();
+    countProduk.innerHTML = `${data.countProduk} produk`;
+    countTesti.innerHTML = `${data.countTesti} testi`;
   },
 };
 
