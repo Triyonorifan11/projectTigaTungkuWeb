@@ -13,8 +13,78 @@ const tableProduk = (data, i) => `
     </td>
 </tr>
 `;
+
+const tableTesti = (data, i) => `
+<tr>
+  <th scope="row">${i}</th>
+  <td>${data.nama_lengkap}</td>
+  <td>${data.email_tester}</td>
+  <td>${data.pesan_tester}</td>
+  <td>${formatDate(data.tgl_input)}</td>
+  <td><span class="badge ${data.bedge}">${data.status}</span></td>
+  <td>
+      <button type="button" id="postingTesti" class="btn btn-sm btn-success rounded-circle" data-testi="${data.idTesti}" title="Posting Testi"><i class="bi bi-check-circle"></i></button>
+      <button type="button" id="deleteTesti" class="btn btn-sm btn-orange rounded-circle" data-testi="${data.idTesti}" title="Delete Testi"><i class="bi bi-trash"></i></button>
+  </td>
+</tr>
+`;
+
 const spinnerTable = () => `
 <tr>
+      <td>
+        <div class="d-flex justify-content-center">
+          <div class="spinner-border text-orange" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
+      </td>
+      <td>
+        <div class="d-flex justify-content-center">
+          <div class="spinner-border text-orange" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
+      </td>
+      <td>
+        <div class="d-flex justify-content-center">
+          <div class="spinner-border text-orange" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
+      </td>
+      <td>
+        <div class="d-flex justify-content-center">
+          <div class="spinner-border text-orange" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
+      </td>
+      <td>
+        <div class="d-flex justify-content-center">
+          <div class="spinner-border text-orange" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
+      </td>
+      <td>
+        <div class="d-flex justify-content-center">
+          <div class="spinner-border text-orange" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
+      </td>
+    </tr>
+`;
+
+const spinnerTableTesti = () => `
+<tr>
+      <td>
+        <div class="d-flex justify-content-center">
+          <div class="spinner-border text-orange" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
+      </td>
       <td>
         <div class="d-flex justify-content-center">
           <div class="spinner-border text-orange" role="status">
@@ -136,5 +206,6 @@ const spinnerCard = () => `
 `;
 
 export {
-  tableProduk, spinnerTable, formEditProduk, spinnerCard, formAddProduk,
+  tableProduk,
+  spinnerTable, formEditProduk, spinnerCard, formAddProduk, spinnerTableTesti, tableTesti,
 };
