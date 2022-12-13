@@ -3,6 +3,7 @@ import 'regenerator-runtime';
 import '../style/style.css';
 import '../style/bootstrap.min.css';
 import App from './view/app';
+import swRegister from './utils/sw-register';
 
 const app = new App({
   header: document.querySelector('#headerNav'),
@@ -25,6 +26,7 @@ window.addEventListener('hashchange', () => {
 window.addEventListener('load', () => {
   checkLogin();
   app.renderPage();
+  swRegister();
   setTimeout(() => {
     if ($('#spinner').length > 0) {
       $('#spinner').removeClass('show');

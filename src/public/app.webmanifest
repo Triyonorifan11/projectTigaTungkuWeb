@@ -1,0 +1,30 @@
+{
+    "id": "admin-tigatungku",
+    "start_url": "./index.html",
+    "name": "Admin Tiga Tungku App",
+    "short_name": "Admin tigatungku",
+    "description": "Admin Tiga tungku app",
+    "display": "standalone",
+    "background_color": "#FFFFFF",
+    "theme_color": "#f57c1a",
+    "icons": [
+      {
+        "src": "/img/icon.png",
+        "sizes": "72x70",
+        "type": "image/png",
+        "purpose": "any"
+      },
+      {
+        "src": "/img/icon2.png",
+        "sizes": "96x94",
+        "type": "image/png",
+        "purpose": "any"
+      },
+      {
+        "src": "/img/icon3.png",
+        "sizes": "128x125",
+        "type": "image/png",
+        "purpose": "any"
+      }
+    ]
+  }
